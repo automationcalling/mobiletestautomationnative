@@ -1,0 +1,71 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="test" parallel="tests" thread-count="4">
+    <test name="realPhysicallocalDeviceTest">
+        <parameter name="ExecutionType" value="localRealDevice"/>
+        <parameter name="platformName" value="Android"/>
+        <parameter name="deviceName" value="Moto5g"/>
+        <parameter name="platformVersion" value="6.0"/>
+        <parameter name="appName" value="/src/main/resources/app/ContactManager.apk"/>
+        <parameter name="deviceOrientation" value=""/>
+        <parameter name="appiumVersion" value=""/>
+        <parameter name="realdeviceendpoint" value=""/>
+        <parameter name="testobject_app_id" value=""/>
+        <parameter name="appiumServerName" value="http://127.0.0.1"/> <!-- This can be different machine>-->
+        <parameter name="appiumServerPort" value="4729"/>
+        <parameter name="udid" value="WIFI_IPADDRESS:PORT"/> <!-- the value for this param either wifi ip or device id-->
+        <classes>
+            <class name="com.automationcalling.testsuites.SimpleTest"/>
+        </classes>
+    </test>
+    <test name="SauceLabEmulator">
+         <parameter name="ExecutionType" value="SauceLabEmulator"/>
+         <parameter name="platformName" value="Android"/>
+         <parameter name="deviceName" value="Samsung Galaxy S7 Edge GoogleAPI Emulator"/>
+         <parameter name="platformVersion" value="7.1"/>
+         <parameter name="appName" value="sauce-storage:ContactManager.apk"/> <!--This is already uploaded in SauceLab Storage-->
+         <parameter name="deviceOrientation" value="portrait"/>
+         <parameter name="appiumVersion" value="1.8.1"/>
+         <parameter name="realdeviceendpoint" value=""/>
+         <parameter name="testobject_app_id" value=""/>
+         <parameter name="appiumServerName" value=""/>
+         <parameter name="appiumServerPort" value=""/>
+         <parameter name="udid" value=""/>
+         <classes>
+             <class name="com.automationcalling.testsuites.SimpleTest"/>
+         </classes>
+     </test>
+     <test name="SauceLabRealDevice">
+         <parameter name="ExecutionType" value="SauceLabRealDevice"/>
+         <parameter name="platformName" value="Android"/>
+         <parameter name="deviceName" value="Samsung_Galaxy_S7_real"/> <!--This is real device name-->
+         <parameter name="platformVersion" value="8.0"/>
+         <parameter name="appName" value="TESTOBJECT_API_KEY"/>
+         <parameter name="deviceOrientation" value=""/>
+         <parameter name="appiumVersion" value="1.8.0"/>
+         <parameter name="realdeviceendpoint" value="https://eu1.appium.testobject.com/wd/hub"/> <!--Url of device location either us or europe-->
+         <parameter name="testobject_app_id" value="1"/> <!--This is your app version, for eg., 2 or 3 etc.,-->
+         <parameter name="appiumServerName" value=""/>
+         <parameter name="appiumServerPort" value=""/>
+         <parameter name="udid" value=""/>
+         <classes>
+             <class name="com.automationcalling.testsuites.SimpleTest"/>
+         </classes>
+     </test>
+    <test name="GenyMotionDevice">
+        <parameter name="ExecutionType" value="GenyMotionDevice"/>
+        <parameter name="platformName" value="Android"/>
+        <parameter name="deviceName" value="Samsung Galaxy S8"/>
+        <parameter name="platformVersion" value="8.0"/>
+        <parameter name="appName" value="/src/main/resources/app/ContactManager.apk"/>
+        <parameter name="deviceOrientation" value=""/>
+        <parameter name="appiumVersion" value=""/>
+        <parameter name="realdeviceendpoint" value=""/>
+        <parameter name="testobject_app_id" value=""/>
+        <parameter name="appiumServerName" value="http://127.0.0.1"/>
+        <parameter name="appiumServerPort" value="5757"/>
+        <parameter name="udid" value="genymotionip:port"/> <!--This ip address and port provided by genymotion-->
+        <classes>
+            <class name="com.automationcalling.testsuites.SimpleTest"/>
+        </classes>
+    </test>
+</suite>
